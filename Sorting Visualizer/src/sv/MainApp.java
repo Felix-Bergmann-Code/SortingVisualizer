@@ -1,13 +1,6 @@
 package sv;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.util.Arrays;
-import java.util.concurrent.CountDownLatch;
-
-import javax.swing.*;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class MainApp {
 	
@@ -16,39 +9,29 @@ public class MainApp {
 	public static String algo;
 	
 	public static void main(String[] args) throws InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		//System.out.print(height_rect);
-		
 		
 		MainMenu.menu();
 		
-		synchronized(syncObj)
-	      {
+		synchronized(syncObj){
 	        syncObj.wait();
 	      }
 		
 		SortingAlgorithm alg = new SortingAlgorithm(a);
-		//System.out.println(java.util.Arrays.toString(a));
+		
 		Visualizer.visualize();
 		
         Thread.sleep(100);
         
         switch (algo) {
-		case "Bubble Sort": {
-			alg.BubbleSort();
-		}
-		case "Quick Sort": {
-			alg.QuickSort(0, a.length-1);
-		}
-		case "Merge Sort": {
-			alg.MergeSort(0, a.length-1);
-		}
+			case "Bubble Sort": {
+				alg.BubbleSort();
+			}
+			case "Quick Sort": {
+				alg.QuickSort(0, a.length-1);
+			}
+			case "Merge Sort": {
+				alg.MergeSort(0, a.length-1);
+			}
         }
-             
-        
-		Visualizer.frame.repaint();
-		
-		
 	}
-	
 }

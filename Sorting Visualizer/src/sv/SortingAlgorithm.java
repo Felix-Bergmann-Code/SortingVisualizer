@@ -61,6 +61,7 @@ public class SortingAlgorithm {
 		      int b = a[i];
 		      a[i] = a[j];
 		      a[j] = b;
+		      
 		      Thread.sleep(speed);
 		      Visualizer.frame.repaint();
 		      
@@ -77,6 +78,7 @@ public class SortingAlgorithm {
  
             Thread.sleep(speed);
 			Visualizer.frame.repaint();
+			
             MergeSort(l, m);
             MergeSort(m + 1, r);
  
@@ -110,6 +112,7 @@ public class SortingAlgorithm {
                 j++;
             }
             k++;
+            
             Thread.sleep(speed);
     		Visualizer.frame.repaint();
         }
@@ -118,6 +121,7 @@ public class SortingAlgorithm {
             a[k] = L[i];
             i++;
             k++;
+            
             Thread.sleep(speed);
     		Visualizer.frame.repaint();
         }
@@ -126,9 +130,9 @@ public class SortingAlgorithm {
             a[k] = R[j];
             j++;
             k++;
+            
             Thread.sleep(speed);
     		Visualizer.frame.repaint();
         }
     }
-		
 }
