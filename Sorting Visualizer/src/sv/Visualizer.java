@@ -12,13 +12,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
+import java.awt.Window.Type;
 import java.util.Arrays;
 
 
 public class Visualizer extends JFrame implements ChangeListener{
 	
-	static JFrame frame = new JFrame("Draw Rectangle");
+	static JFrame frame = new JFrame("Sorting Algorithm Visualizer");
 	static JSlider slider;
 	
 	static int max = Arrays.stream(MainApp.a).max().getAsInt();
@@ -71,6 +71,8 @@ public class Visualizer extends JFrame implements ChangeListener{
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 			panel.add(slider);
 			
+			
+			frame.setType(Type.UTILITY);
 	        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			frame.add(panel, BorderLayout.CENTER);
 	        frame.pack();
