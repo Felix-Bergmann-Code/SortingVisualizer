@@ -5,11 +5,13 @@ public class SortingAlgorithm {
 	static int a[];
 	static int speed=10;
 	
-	public SortingAlgorithm(int a[]){
+	public SortingAlgorithm(int a[]) throws InterruptedException{
+		
 		this.a = a;
 	}
 	
 	public int[] BubbleSort() throws InterruptedException {
+		
 		int temp;
 		
 		for(int i= 0; i<a.length;i++) {
@@ -23,12 +25,15 @@ public class SortingAlgorithm {
 				Visualizer.frame.repaint();
 			}
 		}
+		
 		return a;
+		
 	}
 	
 	public static int[] QuickSort(int low, int high) throws InterruptedException{
 		
 		int t;
+		
 		  if (low < high) {
 		    t = SplitQuickSort(low, high);
 		    
@@ -72,7 +77,8 @@ public class SortingAlgorithm {
 	}
 	
 	void MergeSort(int l, int r) throws InterruptedException{
-        if (l < r) {
+        
+		if (l < r) {
             
             int m = (l + r) / 2;
  

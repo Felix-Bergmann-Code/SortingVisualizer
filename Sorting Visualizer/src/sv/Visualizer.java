@@ -60,9 +60,13 @@ public class Visualizer extends JFrame implements ChangeListener{
 		        		int height = -MainApp.a[i]*height_rect;
 		        	
 		        		g2.fillRect(x, y, width, height);
+	
 		        	}
+		        	
 		       }
 		};
+		
+		
 			
 			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 			panel.add(slider);
